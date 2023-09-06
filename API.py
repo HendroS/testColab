@@ -5,6 +5,7 @@ app = Flask(__name__)
 
 # Beautiful Days API
 # $$$$$
+# abis dirubah lagi tauu
 
 @app.route("/beautiful", methods = ['GET', 'POST'])
 
