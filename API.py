@@ -4,6 +4,7 @@ import beautifulDays, viralAdvertising, angryProfessor, appleOrange, betweenTwoS
 app = Flask(__name__)
 
 # Beautiful Days API
+# $$$$$
 
 @app.route("/beautiful", methods = ['GET', 'POST'])
 
