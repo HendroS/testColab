@@ -7,6 +7,8 @@ app = Flask(__name__)
 # $$$$$
 # abis dirubah lagi tauu
 
+# abis dirubah lagi dan lagi 
+
 @app.route("/beautiful", methods = ['GET', 'POST'])
 
 def beautifulDaysAPI():
