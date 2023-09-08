@@ -1,10 +1,21 @@
 from flask import Flask, request, jsonify
 from gitcircular_array_rotation import circularArrayRotation
+import base64
 
 app= Flask(__name__)
 
 @app.route('/circular-array-rotation', methods=['GET','POST'])
 def searchCircularArrayRotation():
+    username = 'pengabdisetan'
+    password = 'pengabdisetan666'
+    strauth = f'{username}:{password}'
+    encryption = strauth.encode('ascii')
+    base64_auth_str = f'Basic {str(base64.b64encode(encryption))[2:-1]}'
+    header = request.headers.get('Authorization')
+    if header!= base64_auth_str :
+       return 'ERROR', 401
+
+
     data = request.json
     a=data['a'] #[1,2,3]
     k=data['k'] #2
