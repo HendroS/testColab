@@ -1,6 +1,6 @@
 from flask import Flask, request
 import beautifulDays, viralAdvertising, angryProfessor, appleOrange, betweenTwoSets, billDivision
-
+# edited by adira finanncial
 app = Flask(__name__)
 
 # Beautiful Days API
