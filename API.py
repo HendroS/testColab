@@ -6,6 +6,7 @@ app = Flask(__name__)
 # Beautiful Days API
 # $$$$$
 # abis dirubah lagi tauu
+# si sherly nyobain habis dari branch
 
 @app.route("/beautiful", methods = ['GET', 'POST'])
 
@@ -81,9 +82,22 @@ def betweenTwoSetsAPI():
     result_betweenTwoSets = betweenTwoSets.getTotalX(input_a, input_b)
     return {'result': result_betweenTwoSets}
     
+@app.route('/circular-array-rotation', methods=['GET','POST'])
+def searchCircularArrayRotation():
+    data = request.json
+    a=data['a'] #[1,2,3]
+    k=data['k'] #2
+    queries = data['queries'] #[0,1,2]
+
+    def circularArrayRotation(a, k, queries):
+        k=k%len(a)
+        temporaryarray=a[-k:] + a[:-k]
+        for i in range(len(queries)):
+            queries[i]=temporaryarray[queries[i]]
+        return queries
     
-    
-    
+    result= circularArrayRotation(a,k,queries)
+    return {'result': result}
     
 if __name__ == "__main__":
     app.run(debug = True)
