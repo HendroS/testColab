@@ -24,6 +24,10 @@ def searchCircularArrayRotation():
     result = circularArrayRotation(a,k,queries)
     return jsonify({'result': result})
 
+@app.errorhandler(400)
+def badRequest(error):
+    return {'message': 'Bad Request: The request was malformed or invalid.'},404
+
 if __name__ == '__main__':
     app.run(debug=True)
 
