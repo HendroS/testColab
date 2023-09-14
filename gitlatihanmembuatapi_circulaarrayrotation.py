@@ -24,27 +24,24 @@ def searchCircularArrayRotation():
     header = request.headers.get('Authorization')
     #data validation error 401
     if header!= base64_auth_str :
-       return unauthorized(),401
+       return unauthorized()
 
-    #body parameter
-    data = request.json
+    #data validation error 404
+    data = request.json    
+    required_data = ['a', 'k', 'queries']
+    for data_key in required_data :
+        data_keyfound=False
+        for key in data.keys() :
+            if data_key == key:
+                data_keyfound= True
+                break
+        if data_keyfound == False:
+            return badRequest()
+
+    #processing body parameter request
     a=data['a'] #[1,2,3]
     k=data['k'] #2
     queries = data['queries'] #[0,1,2]
-    
-    #data validation error 404
-    if len(a)==0 or k==0 or len(queries)==0:
-        return badRequest(),400
-    # required_data = ['a', 'k', 'queries']
-    # for data_key in required_data :
-    #     data_keyfound=False
-    #     for key in data.keys() :
-    #         if data_key == key:
-    #             data_keyfound=True
-    #             break
-    #         else :
-    #             return badRequest(),400
-
     result = circularArrayRotation(a,k,queries)
     return jsonify({'result': result})
 
