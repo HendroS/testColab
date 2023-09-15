@@ -68,28 +68,26 @@ class Laptop:
         
 def main():
     lenovo = Laptop()
-    lenovo.charging(30)
-    lenovo.play_game(30)
-    lenovo.browsing(60)
-    lenovo.charging(20)
-    lenovo.coding(120)
-    lenovo.play_audio(120)
+    lenovo.charging(120) #100
+    lenovo.play_game(60) #100 - 60 = 40
+    lenovo.browsing(60) # 40 - 12 = 28
+    lenovo.charging(20) # 28 + 20 = 48
+    lenovo.coding(120) # 48 - 12 = 36
+    lenovo.play_audio(120) # 36 - 60 = -24 -> 0
     
     lenovo.sisa_batre()
 main()
         
-# def main():
-#     lenovo = Laptop()
-#     lenovo.charging(int(input('Charging Duration = ')))
-#     lenovo.play_game(int(input('Play Game Duration = ')))   
-#     lenovo.coding(int(input('Coding Duration = ')))
-#     lenovo.browsing(int(input('Browsing Duration = ')))
-#     lenovo.play_audio(int(input('Play Audio Duration = ')))
-    
-#     print(lenovo.power)
     
 # main()
     
+#     - what is the power level after:
+#         - charge 2 hours
+#         - play game 1 hour
+#         - browsing 1 hour
+#         - charge 20 minutes
+#         - coding 2 hours
+#         - play audio 2 hours 
     
     
     
